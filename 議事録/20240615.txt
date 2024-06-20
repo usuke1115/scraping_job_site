@@ -37,11 +37,18 @@
 - Dockerを使った環境構築 ← ina
 - 画面レイアウト ← ゆごーん
 
-## GitHubの運用について => 一旦モブプロみたいな感じで
-- 変更する時はdevelopブランチを最新化
-- ローカルのブランチをfeatureに切り替える
-- 変更後はfeatureブランチにコミットしてプッシュ
-- featureブランチからdevelopにプルリクエストしてマージ
+## GitHubの運用方針
+- 編集前にローカルのdevelopブランチをリモートのdevelopブランチで最新化
+
+- ローカルのブランチをfeatureに切り替え
+
+- ローカルのfeatureブランチでソースなどを編集してコミットする
+
+- リモートのfeatureブランチにプッシュ
+
+- リモート上でfeatureブランチからdevelopにプルリクエストしてマージ
+
+- ローカルのブランチをdevelopに切り替えておく(必ず)
 
 ## Gitの環境構築について
 https://prog-8.com/docs/git-env-win
