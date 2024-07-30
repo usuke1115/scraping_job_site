@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pyscript Example</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
-    
+    <h1>Pyscriptでサイコロを振る</h1>
+    <div>
+        <button id="roll-button">サイコロを振る</button>
+    </div>
+    <div id="dice-result">
+        <py-script>
+            import random
+            def roll_dice(*args, **kwargs):
+            result = random.randint(1, 6)
+            pyscript.write("dice-result", f"サイコロの結果: {result}")
+        </py-script>
+    </div>
+    <script>
+    const button = document.getElementById('roll-button');
+    button.addEventListener('click', () => {
+        pyscript.interpreter.globals.roll_dice();
+    });
+    </script>
 </body>
 </html>
